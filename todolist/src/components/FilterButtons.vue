@@ -1,24 +1,17 @@
 <template>  
-    <button @click="onAll">all</button>
-    <button @click="onImportant">important</button>
-    <button @click="onDone">Done</button>
+    <button class="{active: value === 'all'}" @click="$emit('change','all')">all</button>
+    <button class="{active: value === 'important'}" @click="$emit('change','done')">done</button>
+    <button class="{active: value === 'done'}" @click="$emit('change','important')">impor</button>
 
 </template>
 <script>
 export default {
     emits:['filteredFunc','showAll'],
-    props:[''],
-    methods:{
-        onAll(){
-            this.$emit("showAll")
-            alert('asd')
-        },
-        onImportant(){
-            alert('sa')
-        },
-        onDone(){
-            
-        }
-    }
+    props:['value']
 }
 </script>
+<style scoped>
+    .active{
+        background-color:firebrick 
+    }
+</style>

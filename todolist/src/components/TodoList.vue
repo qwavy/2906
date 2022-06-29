@@ -29,8 +29,14 @@ export default {
       //   alert('true')
       // }
       // const r = this.tasks.filter((todos) => todos.important === this.tasks.important)
-      const r = this.tasks.map((tasks ) => tasks)
-      console.log(r)
+      const r = this.tasks.map((tasks) => tasks.name)
+      console.log(r.length)
+      const l = this.tasks.map((tasks) => tasks.done)
+      console.log(l.length)
+      
+    var arr = [true, false, true, true, true, false, false, false, false, false];
+    var count = arr.filter(function(value){return value});
+    console.log(count.length);
       
     }
   }
